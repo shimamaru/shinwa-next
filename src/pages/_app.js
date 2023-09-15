@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Logo from "../components/Logo";
 import Footer from "../components/Footer";
 import Map from "../components/Map";
+import { GoogleMap, Marker } from "@react-google-maps/api";
 
 const montserrat = Montserrat({ subsets: ["latin"], variables: "--font-mont" });
 
@@ -11,14 +12,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <main>
-        {/* <NavBar /> */}
-        {/* <Logo /> */}
         <Map />
-        {/* <Component {...pageProps} /> */}
       </main>
-      {/* <Footer /> */}
     </>
   );
 }
-
-// className={`${inter.variables} font-mont`}
