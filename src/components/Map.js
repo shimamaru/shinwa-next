@@ -1,21 +1,15 @@
+// ParentComponent.js
 import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import styled from "styled-components";
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import CustomMarker from "./Marker";
+import { markers } from "./markers";
 
 const containerStyle = {
   width: "100%",
   height: "86vh",
 };
 
-const center1 = {
-  lat: 35.44824967066238,
-  lng: 132.9602847311755,
-};
-
-const zoom1 = 11;
-
-const Map = () => {
+const MapComponent = () => {
   return (
     <LoadScript
       googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
@@ -25,13 +19,19 @@ const Map = () => {
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center1}
-        zoom={zoom1}
+        center={markers[0].position}
+        zoom={11}
       >
-        <CustomMarker position={center1} />
+        {markers.map((marker) => (
+          <CustomMarker
+            key={marker.id}
+            position={marker.position}
+            label={marker.label}
+          />
+        ))}
       </GoogleMap>
     </LoadScript>
   );
 };
 
-export default Map;
+export default MapComponent;
