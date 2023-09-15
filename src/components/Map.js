@@ -2,7 +2,7 @@
 import React from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
 import CustomMarker from "./Marker";
-import { markers } from "./markers";
+import { markerContents } from "./markerContents";
 
 const containerStyle = {
   width: "100%",
@@ -19,10 +19,11 @@ const MapComponent = () => {
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={markers[0].position}
+        center={{ lat: 35.44824967066238, lng: 132.9602847311755 }}
+        s
         zoom={11}
       >
-        {markers.map((marker) => (
+        {markerContents.map((marker) => (
           <CustomMarker
             key={marker.id}
             position={marker.position}

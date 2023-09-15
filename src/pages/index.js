@@ -1,14 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import { Inter } from "next/font/google";
-import profilePic from "../../public/images/profile/developer-pic-1.png";
-
 import Layout from "../components/Layout";
-import AnimatedText from "../components/AnimatedText";
-import { LinkArrow } from "../components/Icons";
-import HireMe from "../components/HireMe";
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -21,15 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <Layout>
-          <div className="flex items-center justify-center w-full mb-10 ">
-            <Image
-              src={profilePic}
-              alt="Picture of the author"
-              width={500}
-              height={500}
-              className="rounded-full"
-            />
-          </div>
+          <div className="flex items-center justify-center w-full mb-10 "></div>
         </Layout>
       </main>
     </>
