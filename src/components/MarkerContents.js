@@ -5,6 +5,7 @@ export const center = [
       lat: 35.44824967066238,
       lng: 132.9602847311755,
     },
+    icon: "../../public/images/circular-text.png",
   },
 ];
 
@@ -25,6 +26,7 @@ export const markerContents = [
       lng: 132.8602847311755,
     },
     label: "Marker 2",
+    icon: "../../public/images/circular-text.png",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ export const markerContents = [
       lng: 132.8702847311755,
     },
     label: "Marker 3",
+    icon: "../../public/images/circular-text.png",
   },
   // 他のマーカー情報
 ];
