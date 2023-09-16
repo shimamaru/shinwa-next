@@ -6,7 +6,7 @@ import { markerContents } from "./markerContents";
 
 const containerStyle = {
   width: "100%",
-  height: "86vh",
+  height: "90vh",
 };
 
 const MapComponent = () => {

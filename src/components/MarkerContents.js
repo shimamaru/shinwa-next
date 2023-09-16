@@ -1,4 +1,3 @@
-// markers.js
 export const center = [
   {
     position: {
@@ -6,6 +5,8 @@ export const center = [
       lng: 132.9602847311755,
     },
     icon: "../../public/images/circular-text.png",
+    description: "詳細情報1",
+    title: "タイトル1",
   },
 ];
 
@@ -18,6 +19,8 @@ export const markerContents = [
     },
     label: "Marker 1",
     icon: "../../public/images/circular-text.png",
+    description: "詳細情報1",
+    title: "タイトル1",
   },
   {
     id: 2,
@@ -27,6 +30,8 @@ export const markerContents = [
     },
     label: "Marker 2",
     icon: "../../public/images/circular-text.png",
+    description: "詳細情報2",
+    title: "タイトル2",
   },
   {
     id: 3,
@@ -36,6 +41,8 @@ export const markerContents = [
     },
     label: "Marker 3",
     icon: "../../public/images/circular-text.png",
+    description: "詳細情報3",
+    title: "タイトル3",
   },
   // 他のマーカー情報
 ];
