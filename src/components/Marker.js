@@ -28,40 +28,59 @@ const CustomMarker = ({ position }) => {
         position={position}
         onLoad={(marker) => {
           marker.addListener("click", () => {
+            //クリックしたら移動するコードの関数が走る
             handleMarkerClick(marker);
 
             // マーカーのpositionを取得
             const markerPosition = marker.getPosition();
 
-            // マーカーの位置を検索し、その位置を持つマーカーのindexを取得
             const markerIndex = Object.keys(markerContents).findIndex((key) => {
               const content = markerContents[key];
-              //ポジションが同じindexの時にtrueを返すから、その時の値がmakerIndexとなる。
               return (
                 content.position.lat === markerPosition.lat() &&
                 content.position.lng === markerPosition.lng()
               );
             });
 
-            // indexをコンソールに出力
             console.log("マーカーのindex:", markerIndex);
+            //クリックしたら、下のinfowindowにmaker引数を持って開く
             setSelectedMarker(marker);
           });
         }}
       />
 
       {selectedMarker && (
-        //infowindowの表示
         <InfoWindow
           position={selectedMarker.position}
           onCloseClick={() => {
             setSelectedMarker(null);
           }}
         >
-          <div>
-            <h3>{markerContents[markerIndex].title}</h3>
-            <p>{markerContents[markerIndex].description}</p>
-          </div>
+          {(() => {
+            // マーカーの位置を検索し、その位置を持つマーカーのindexを取得
+            const markerIndex = Object.keys(markerContents).findIndex((key) => {
+              const content = markerContents[key];
+              //ポジションが同じindexの時にtrueを返すから、その時の値がmakerIndexとなる。
+              return (
+                content.position.lat === selectedMarker.position.lat() &&
+                content.position.lng === selectedMarker.position.lng()
+              );
+            });
+
+            //indexが-1でなければ、returnの中身を返す
+            if (markerIndex !== -1) {
+              const markerInfo = markerContents[markerIndex];
+              return (
+                <div>
+                  <h3>{markerInfo.title}</h3>
+                  <p>{markerInfo.description}</p>
+                </div>
+              );
+            }
+
+            //そうでなければ、null
+            return null;
+          })()}
         </InfoWindow>
       )}
     </>
