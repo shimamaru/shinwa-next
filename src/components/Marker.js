@@ -1,12 +1,19 @@
 import React from "react";
-import { MarkerF, InfoWindow } from "@react-google-maps/api";
+import { MarkerF, InfoWindowF } from "@react-google-maps/api";
 import styled from "styled-components";
 import { useState } from "react";
 import { markerContents } from "./markerContents";
 
+//css
 const StyledMarker = styled(MarkerF)`
   /* color: blue; */
   font-size: 16px;
+  display: none;
+`;
+
+const StyledInfoWindow = styled(InfoWindowF)`
+  border-radius: 50px;
+  display: none;
 `;
 
 const CustomMarker = ({ position }) => {
@@ -25,6 +32,7 @@ const CustomMarker = ({ position }) => {
   return (
     <>
       <StyledMarker
+        className="fixed flex items-center justify-center overflow-hidden left-4 bottom-4"
         position={position}
         onLoad={(marker) => {
           marker.addListener("click", () => {
@@ -50,7 +58,7 @@ const CustomMarker = ({ position }) => {
       />
 
       {selectedMarker && (
-        <InfoWindow
+        <StyledInfoWindow
           position={selectedMarker.position}
           onCloseClick={() => {
             setSelectedMarker(null);
@@ -71,7 +79,7 @@ const CustomMarker = ({ position }) => {
             if (markerIndex !== -1) {
               const markerInfo = markerContents[markerIndex];
               return (
-                <div>
+                <div className="p-2">
                   <h3>{markerInfo.title}</h3>
                   <p>{markerInfo.description}</p>
                 </div>
@@ -81,7 +89,7 @@ const CustomMarker = ({ position }) => {
             //そうでなければ、null
             return null;
           })()}
-        </InfoWindow>
+        </StyledInfoWindow>
       )}
     </>
   );
