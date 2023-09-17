@@ -3,18 +3,18 @@ import { MarkerF, InfoWindowF } from "@react-google-maps/api";
 import styled from "styled-components";
 import { useState } from "react";
 import { markerContents } from "./markerContents";
+import Image from "next/image";
 
 //css
-const StyledMarker = styled(MarkerF)`
-  /* color: blue; */
-  font-size: 16px;
-  display: none;
-`;
+// const StyledMarker = styled(MarkerF)`
+//   font-size: 16px;
+//   display: none;
+// `;
 
-const StyledInfoWindow = styled(InfoWindowF)`
-  border-radius: 50px;
-  display: none;
-`;
+// const StyledInfoWindow = styled(InfoWindowF)`
+//   border-radius: 50px;
+//   display: none;
+// `;
 
 const CustomMarker = ({ position }) => {
   //infowindowの表示。初めはnull
@@ -31,7 +31,7 @@ const CustomMarker = ({ position }) => {
 
   return (
     <>
-      <StyledMarker
+      <MarkerF
         className="fixed flex items-center justify-center overflow-hidden left-4 bottom-4"
         position={position}
         onLoad={(marker) => {
@@ -58,7 +58,7 @@ const CustomMarker = ({ position }) => {
       />
 
       {selectedMarker && (
-        <StyledInfoWindow
+        <InfoWindowF
           position={selectedMarker.position}
           onCloseClick={() => {
             setSelectedMarker(null);
@@ -79,9 +79,16 @@ const CustomMarker = ({ position }) => {
             if (markerIndex !== -1) {
               const markerInfo = markerContents[markerIndex];
               return (
-                <div className="p-2">
-                  <h3>{markerInfo.title}</h3>
-                  <p>{markerInfo.description}</p>
+                <div className="p-1">
+                  <Image
+                    src="/images/new/haunh_water_color_style_goat_with_the_moutain_forest_in_the_bac_2d765b61-d291-458f-8fab-ac3cc9df1062.png"
+                    alt=""
+                    className="w-20 h-8 rounded"
+                    width={100}
+                    height={100}
+                  />
+                  <h3 className="text-base">{markerInfo.title}</h3>
+                  <p className="text-xs">{markerInfo.description}</p>
                 </div>
               );
             }
@@ -89,7 +96,7 @@ const CustomMarker = ({ position }) => {
             //そうでなければ、null
             return null;
           })()}
-        </StyledInfoWindow>
+        </InfoWindowF>
       )}
     </>
   );

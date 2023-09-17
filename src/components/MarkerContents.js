@@ -7,6 +7,7 @@ export const center = [
     icon: "../../public/images/circular-text.png",
     description: "詳細情報1",
     title: "タイトル1",
+    imageUrl: "",
   },
 ];
 
@@ -19,8 +20,10 @@ export const markerContents = [
     },
     label: "Marker 1",
     icon: "../../public/images/circular-text.png",
-    description: "詳細情報1",
     title: "タイトル1",
+    description: "詳細情報1",
+    imageUrl:
+      "/images/new/haunh_water_color_style_goat_with_the_moutain_forest_in_the_bac_2d765b61-d291-458f-8fab-ac3cc9df1062.png",
   },
   {
     id: 2,
@@ -30,8 +33,10 @@ export const markerContents = [
     },
     label: "Marker 2",
     icon: "../../public/images/circular-text.png",
-    description: "詳細情報2",
     title: "タイトル2",
+    description: "詳細情報2",
+    imageUrl:
+      "/images/new/haunh_water_color_style_goat_with_the_moutain_forest_in_the_bac_2d765b61-d291-458f-8fab-ac3cc9df1062.png",
   },
   {
     id: 3,
@@ -43,6 +48,8 @@ export const markerContents = [
     icon: "../../public/images/circular-text.png",
     description: "詳細情報3",
     title: "タイトル3",
+    imageUrl:
+      "/images/new/haunh_water_color_style_goat_with_the_moutain_forest_in_the_bac_2d765b61-d291-458f-8fab-ac3cc9df1062.png",
   },
   // 他のマーカー情報
 ];
