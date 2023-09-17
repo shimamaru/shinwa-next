@@ -1,20 +1,8 @@
 import React from "react";
 import { MarkerF, InfoWindowF } from "@react-google-maps/api";
-import styled from "styled-components";
 import { useState } from "react";
 import { markerContents } from "./markerContents";
 import Image from "next/image";
-
-//css
-// const StyledMarker = styled(MarkerF)`
-//   font-size: 16px;
-//   display: none;
-// `;
-
-// const StyledInfoWindow = styled(InfoWindowF)`
-//   border-radius: 50px;
-//   display: none;
-// `;
 
 const CustomMarker = ({ position }) => {
   //infowindowの表示。初めはnull
@@ -79,16 +67,18 @@ const CustomMarker = ({ position }) => {
             if (markerIndex !== -1) {
               const markerInfo = markerContents[markerIndex];
               return (
-                <div className="p-1">
+                <div>
                   <Image
-                    src="/images/new/haunh_water_color_style_goat_with_the_moutain_forest_in_the_bac_2d765b61-d291-458f-8fab-ac3cc9df1062.png"
+                    src={markerInfo.imageUrl}
                     alt=""
-                    className="w-20 h-8 rounded"
+                    className="transition-transform rounded-full overflow-visiblew-20 h-15 hover:scale-110"
                     width={100}
                     height={100}
                   />
-                  <h3 className="text-base">{markerInfo.title}</h3>
-                  <p className="text-xs">{markerInfo.description}</p>
+                  <h3 className="w-24 mt-1 text-base">{markerInfo.title}</h3>
+                  <p className="w-24 text-xs text-gray-600">
+                    {markerInfo.description}
+                  </p>
                 </div>
               );
             }

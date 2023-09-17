@@ -315,7 +315,6 @@ const MapComponent = () => {
             key={marker.id}
             position={marker.position}
             label={marker.label}
-            icon={marker.icon}
           />
         ))}
       </GoogleMap>

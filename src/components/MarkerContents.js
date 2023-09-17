@@ -4,7 +4,6 @@ export const center = [
       lat: 35.44824967066238,
       lng: 132.9602847311755,
     },
-    icon: "../../public/images/circular-text.png",
     description: "詳細情報1",
     title: "タイトル1",
     imageUrl: "",
@@ -19,11 +18,9 @@ export const markerContents = [
       lng: 132.9602847311755,
     },
     label: "Marker 1",
-    icon: "../../public/images/circular-text.png",
-    title: "タイトル1",
-    description: "詳細情報1",
-    imageUrl:
-      "/images/new/haunh_water_color_style_goat_with_the_moutain_forest_in_the_bac_2d765b61-d291-458f-8fab-ac3cc9df1062.png",
+    title: "ポセイドン",
+    description: "ゼウスに次ぐ圧倒的な強さを誇る海の神。",
+    imageUrl: "/images/icons/poseidon.png",
   },
   {
     id: 2,
@@ -32,11 +29,9 @@ export const markerContents = [
       lng: 132.8602847311755,
     },
     label: "Marker 2",
-    icon: "../../public/images/circular-text.png",
     title: "タイトル2",
     description: "詳細情報2",
-    imageUrl:
-      "/images/new/haunh_water_color_style_goat_with_the_moutain_forest_in_the_bac_2d765b61-d291-458f-8fab-ac3cc9df1062.png",
+    imageUrl: "/images/icons/amaterasu.png",
   },
   {
     id: 3,
