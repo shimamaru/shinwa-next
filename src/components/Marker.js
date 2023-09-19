@@ -20,7 +20,7 @@ const CustomMarker = ({ position }) => {
   return (
     <>
       <MarkerF
-        icon={markerContents[markerIndex].imageUrl}
+        // icon={markerContents[markerIndex].imageUrl}
         className="fixed flex items-center justify-center overflow-hidden left-4 bottom-4"
         position={position}
         onLoad={(marker) => {
