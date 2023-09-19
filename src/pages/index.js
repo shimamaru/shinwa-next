@@ -1,8 +1,21 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Layout from "../components/Layout";
+import { getAllPosts } from "../../lib/notionAPI";
+
+export const getStaticProps = async () => {
+  const allPost = await getAllPosts();
+
+  return {
+    props: {
+      allPost,
+    },
+
+    revalidate: 60,
+  };
+};
 
 export default function Home() {
+  console.log("allPost", allPost);
   return (
     <>
       <Head>
