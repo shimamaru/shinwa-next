@@ -6,11 +6,7 @@ export default async function handler(req, res) {
       database_id: process.env.NOTION_DATABASE_ID,
       sorts: [
         {
-          property: "Name",
-          direction: "ascending",
-        },
-        {
-          property: "Status",
+          property: "Order",
           direction: "ascending",
         },
       ],
