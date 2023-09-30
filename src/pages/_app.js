@@ -9,11 +9,6 @@ async function fetchData() {
       const data = await response.json();
       // データを使用して表示または他の操作を行う
       console.log(data);
-      console.log(data[0].title.Description.rich_text[0].text.content);
-      console.log(data[1].title.Description.rich_text[0].text.content);
-      console.log(data[2].title.Description.rich_text[0].text.content);
-      console.log(data[3].title.Description.rich_text[0].text.content);
-      console.log(data[4].title.Description.rich_text[0].text.content);
     } else {
       console.error("データの取得に失敗しました");
     }

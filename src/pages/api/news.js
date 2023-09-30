@@ -4,6 +4,16 @@ export default async function handler(req, res) {
   try {
     const response = await notion.databases.query({
       database_id: process.env.NOTION_DATABASE_ID,
+      sorts: [
+        {
+          property: "Name",
+          direction: "ascending",
+        },
+        {
+          property: "Status",
+          direction: "ascending",
+        },
+      ],
     });
 
     const news = response.results.map((page) => ({
