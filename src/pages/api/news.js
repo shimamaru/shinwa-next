@@ -4,6 +4,7 @@ export default async function handler(req, res) {
   try {
     const response = await notion.databases.query({
       database_id: process.env.NOTION_DATABASE_ID,
+      //Orderプロパティ順に並べる
       sorts: [
         {
           property: "Order",

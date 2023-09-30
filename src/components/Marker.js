@@ -4,7 +4,12 @@ import { useState } from "react";
 import { markerContents } from "./markerContents";
 import Image from "next/image";
 
-const CustomMarker = ({ position }) => {
+const CustomMarker = ({ position, data, responseData }) => {
+  // const content =
+  //   data[0]?.title?.Description?.rich_text[0]?.text?.content || "";
+  console.log(data);
+  console.log(responseData);
+
   //infowindowの表示。初めはnull
   const [selectedMarker, setSelectedMarker] = useState(null);
   //クリックしたら移動するコード
@@ -67,6 +72,9 @@ const CustomMarker = ({ position }) => {
             //indexが-1でなければ、returnの中身を返す
             if (markerIndex !== -1) {
               const markerInfo = markerContents[markerIndex];
+              const content = data || "";
+              console.log(content);
+
               return (
                 <div>
                   <Image
@@ -76,7 +84,8 @@ const CustomMarker = ({ position }) => {
                     width={100}
                     height={100}
                   />
-                  <h3 className="w-24 mt-1 text-base">{markerInfo.title}</h3>
+                  {/* <h3 className="w-24 mt-1 text-base">{markerInfo.title}</h3> */}
+                  <h3 className="w-24 mt-1 text-base">{content}</h3>
                   <p className="w-24 text-xs text-gray-600">
                     {markerInfo.description}
                   </p>
